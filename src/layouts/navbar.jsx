@@ -14,8 +14,20 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
   {
-    title: "Home",
-    to: "/",
+    title: "Fastighetssystem",
+    to: "/fastighetssystem",
+  },
+  {
+    title: "Om oss",
+    to: "/om-oss",
+  },
+  {
+    title: "Pris",
+    to: "/pris",
+  },
+  {
+    title: "Support",
+    to: "/support",
   },
 ];
 
@@ -41,13 +53,19 @@ const DesktopNav = () => (
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
       <Package2 className="h-6 w-6" />
-      <span className="sr-only">Acme Inc</span>
+      <span className="sr-only">TenFAST</span>
     </NavItem>
     {navItems.map((item) => (
       <NavItem key={item.to} to={item.to}>
         {item.title}
       </NavItem>
     ))}
+    <Button variant="outline" className="ml-auto">
+      Kom igång
+    </Button>
+    <Button variant="secondary" className="ml-2">
+      Logga in
+    </Button>
   </nav>
 );
 
@@ -66,13 +84,19 @@ const MobileNav = () => (
           className="flex items-center gap-2 text-lg font-semibold"
         >
           <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <span className="sr-only">TenFAST</span>
         </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
             {item.title}
           </NavItem>
         ))}
+        <Button variant="outline" className="mt-4">
+          Kom igång
+        </Button>
+        <Button variant="secondary" className="mt-2">
+          Logga in
+        </Button>
       </nav>
     </SheetContent>
   </Sheet>
